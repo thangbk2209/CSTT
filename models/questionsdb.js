@@ -144,13 +144,3 @@ db.questions.insert({
 	e : 18,
 	c : [6, 7, 8, 9, 10, 15]
 })
-
-
-Câu 5 : Đi du lịch một mình hay theo nhóm :
-e14: Một mình   : c1, c5, c7, c8, c9, c10, c15
-e15: Theo nhóm  : c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18
-
-Câu 6 : Phong cảnh :
-e16: Biển         : c12, c16, c17, c18
-e17: Núi          : c1, c2, c3, c4, c5, c11, c13, c14
-e18: Khu di tích  : c6, c7, c8, c9, c10, c15
