@@ -76,20 +76,18 @@
                     <h1><span class="fa fa-sign-in"></span> Add question</h1>
                     <hr>
                     <div class="col-md-8">
-                        <form action="/addQuestion" method="post" name="" >
+                        <form action="/addLoc" method="post" name="" >
                              <div class="form-group">   
-                                  <label>Question</label>     
-                                   <input type="text" name="cauhoi" class="form-control" ng-model="ques" placeholder="Question"/>
+                                  <label>Location</label>     
+                                  <!--  <input type="text" name="cauhoi" class="form-control" ng-model="ques" placeholder="Question"/> -->
                                    
                             </div>
                             <div class="form-group">
                                 <label>Answer</label>
-                                <input type="text" class="form-control" name="ans1" ng-model="ans1" placeholder="Answer1"/>
-                                <input type="text" class="form-control" name="ans2" ng-model="ans2" placeholder="Answer2"/>
-                                <input type="text" class="form-control" name="ans3" ng-model="ans3" placeholder="Answer3"/>
-                                <input type="text" class="form-control" name="ans4" ng-model="ans4" placeholder="Answer4"/>
+                                <input type="text" class="form-control" name="c" ng-model="c" placeholder="c"/>
+                                <input type="text" class="form-control" name="loc" ng-model="loc" placeholder="Location"/>
                             </div>
-                                <button type="Submit" class="btn btn-info" ng-click="addQues()" >Submit</button>
+                                <button type="Submit" class="btn btn-info" ng-click="addLoc()" >Submit</button>
                         </form>
                     </div>
                     <div class="col-md-4">
@@ -132,16 +130,13 @@
         var app = angular.module("addQues",[]);
         app.controller("addQues",function($scope,$http){
             $scope.del = function(){
-                var ques = $scope.ques;
-                var ans1 = $scope.ans1;
-                var ans2 = $scope.ans2;
-                var ans3 = $scope.ans3;
-                var ans4 = $scope.ans4;
+                var c = $scope.ans3;
+                var loc = $scope.ans4;
 
                   console.log(id);
                   $http({
                     method : "POST",
-                    url: "/addQuestion",
+                    url: "/addLoc",
                     data: {ques: ques,ans1: ans1, ans2:ans2, ans3:ans3, ans4:ans4},
                     headers: {'Content-Type': 'application/json'}
                   }).then(function(data){

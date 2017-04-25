@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Ques = require('../models/questions.js');
+var Loc = require('../models/locations.js');
 var _ = require('lodash');
 var a = [];
 /* GET home page. */
@@ -54,17 +55,13 @@ router.post('/addAns',function(req,res,next){
 router.get('/admin', function(req, res, next) {
   res.render('add.ejs', {});
 });
-router.post('/addQuestion', function(req, res, next) {
+router.post('/addLoc', function(req, res, next) {
   // res.render('add.ejs', {});
   console.log(req.body)
-  var newQues = new Ques();
-  newQues.cauhoi = req.body.cauhoi;
-  newQues.ans.push({cautraloi:req.body.ans1});
-  newQues.ans.push({cautraloi:req.body.ans2});
-  newQues.ans.push({cautraloi:req.body.ans3});
-  if(req.body.ans!==null)
-    newQues.ans.push({cautraloi:req.body.ans4});
-   newQues.save(function(err) {
+  var newLoc = new Loc();
+  newLoc.c = req.body.c;
+  newLoc.loc = req.body.loc;
+   newLoc.save(function(err) {
     if (err)
         console.log(err);
     });
