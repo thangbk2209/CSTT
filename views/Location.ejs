@@ -79,7 +79,7 @@
 
 <!-- <button class="btn btn-info" onclick="drawPoint(105.853277,21.031208,<%=data.lon%>,<%=data.lat%>);">Show road</button> -->
         </div>
-        
+
         <!-- /.row -->
 
     </div>
@@ -88,12 +88,22 @@
     <!-- jQuery Version 1.11.1 -->
      <script>
        function myMap() {
-          var myCenter = new google.maps.LatLng(<%=data.lat%>,<%=data.lon%>);
-          var mapCanvas = document.getElementById("map");
-          var mapOptions = {center: myCenter, zoom: 15};
-          var map = new google.maps.Map(mapCanvas, mapOptions);
-          var marker = new google.maps.Marker({position:myCenter});
-          marker.setMap(map);
+          // var myCenter = new google.maps.LatLng(<%=data.lat%>,<%=data.lon%>);
+          // var mapCanvas = document.getElementById("map");
+          // var mapOptions = {center: myCenter, zoom: 15};
+          // var map = new google.maps.Map(mapCanvas, mapOptions);
+          // var marker = new google.maps.Marker({position:myCenter});
+          // marker.setMap(map);
+          // var map = new google.maps.Map(document.getElementById('map'), {
+          //       zoom: 8,
+          //       center: new google.maps.LatLng(21.027, 105.834)
+          // });
+          var latSrc = 21.031208;
+          var lngSrc = 105.853277;
+          var latDes = <%=data.lat%>;
+          var lngDes = <%=data.lon%>;
+
+          drawPoint(lngSrc,latSrc,lngDes,latDes);
         }
 
         // var latSrc = 21.031208;
@@ -107,7 +117,7 @@
                     zoom: 8,
                     center: pointA
                 },
-                map = new google.maps.Map(document.getElementById('map-canvas'), myOptions),
+                map = new google.maps.Map(document.getElementById('map'), myOptions),
                 // Instantiate a directions service.
                 directionsService = new google.maps.DirectionsService,
                 directionsDisplay = new google.maps.DirectionsRenderer({
@@ -126,6 +136,7 @@
                     map: map
                 });
             // get route from A to B
+            // alert((google.maps.geometry.spherical.computeDistanceBetween(pointA, pointB)/1000).toFixed(2));
             calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
         }
 
@@ -139,6 +150,9 @@
             }, function (response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
+                    alert(directionsDisplay.directions.routes[0].legs[0].distance.text);
+                    alert(directionsDisplay.directions.routes[0].legs[0].duration.text);
+
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
@@ -147,7 +161,7 @@
 
     </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5OE62Cn3iG-hleW2aMl51xGQuuUrDykI&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5OE62Cn3iG-hleW2aMl51xGQuuUrDykI&libraries=geometry&callback=myMap"></script>
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
