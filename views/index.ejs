@@ -9,16 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>He co so tri thuc</title>
+    <title>TTNT</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <style>
-    body {
-        padding-top: 70px;
-    }
+        body {
+            padding-top: 0px;
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        }
     </style>
 
 </head>
@@ -27,7 +30,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -36,138 +39,128 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">F5</a>
+                <a class="navbar-brand" href="/">F5</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">About</a>
+                        <a class="" href="/test">Test nhanh</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a class="" href="/"></a>
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
     <!-- Page Content -->
-    <form method="post" action="/addAns">
+    <header>
         <div class="container">
-            
-                    <ul>
-                        <li class="list-group-item">
-                            <label><%=data[0].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" name="foo" value="<%=data[0].e%>"/><%=data[0].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo" value="<%=data[1].e%>"/><%=data[1].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo" value="<%=data[2].e%>"/><%=data[2].cautraloi%></label>
-                            <!-- <br><input type="submit" name="" class="btn btn-info" value="Submit"> -->
-                        </li>
-                    </ul>
-                  
+            <div class="intro-text">
+                <div class="intro-heading">F5</div>
+                <div class="intro-lead-in">Lựa chọn điểm đến phù hợp cho kì nghỉ của bạn</div>
+            </div>
         </div>
+    </header>
+    <section id="portfolio" class="bg-light-gray">
         <div class="container">
-                    <ul>
-                        <li class="list-group-item">
-                            <label><%=data[3].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" name="foo1" value="<%=data[3].e%>"/><%=data[3].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo1" value="<%=data[4].e%>"/><%=data[4].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo1" value="<%=data[5].e%>"/><%=data[5].cautraloi%></label>
-                        </li>
-                    </ul>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Các địa điểm du lịch:</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Round Icons</h4>
+                        <p class="text-muted">Graphic Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Startup Framework</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Treehouse</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Golden</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Escape</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Dreams</h4>
+                        <p class="text-muted">Website Design</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="container">
-                    <ul>
-                        <li class="list-group-item">
-                            <label><%=data[6].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" name="foo2" value="<%=data[6].e%>"/><%=data[6].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo2" value="<%=data[7].e%>"/><%=data[7].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo2" value="<%=data[8].e%>"/><%=data[8].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo2" value="<%=data[9].e%>"/><%=data[9].cautraloi%></label>
-                        </li>
-                    </ul>
-        </div>
-        <div class="container">
-                    <ul>
-                        <li class="list-group-item">
-                            <label><%=data[10].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" name="foo3" value="<%=data[10].e%>"/><%=data[10].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo3" value="<%=data[11].e%>"/><%=data[11].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo3" value="<%=data[12].e%>"/><%=data[12].cautraloi%></label>
-                            
-                        </li>
-                    </ul>
-        </div>
-        <div class="container">
-                    <ul>
-                        <li class="list-group-item">
-                            <label><%=data[13].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" name="foo4" value="<%=data[13].e%>"/><%=data[13].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo4" value="<%=data[14].e%>"/><%=data[14].cautraloi%></label>
-                        </li>
-                    </ul>
-        </div>
-        <div class="container">
-                    <ul>
-                        <li class="list-group-item">
-                            <label><%=data[15].cauhoi%></label>
-                            <br> 
-                             <label>
-                                <input type="radio" name="foo5" value="<%=data[15].e%>"/><%=data[15].cautraloi%></label>
-                            <br><label>
-                               <input type="radio" name="foo5" value="<%=data[16].e%>"/><%=data[16].cautraloi%></label>
-                            <br><label>
-                               <input type="radio" name="foo5" value="<%=data[17].e%>"/><%=data[17].cautraloi%></label>
-                        </li>
-                    </ul>
-        </div>
-        <br><input type="submit" name="" class="btn btn-info" value="Submit">
-    </form>  
-    <!-- <div class="container">
-        <form method="post" action="/addAns">
-                <ul>
-                    <li class="list-group-item">
-                        <label><%=data[6].cauhoi%></label>
-                         <br> 
-                         <label>
-                            <input type="radio" name="foo" value="<%=data[0].e%>"/><%=data[6].cautraloi%></label>
-                         <br><label>
-                           <input type="radio" name="foo" value="<%=data[1].e%>"/><%=data[7].cautraloi%></label>
-                        <br><label>
-                            <input type="radio" name="foo" value="<%=data[2].e%>"/><%=data[8].cautraloi%></label>
-                        <br><label>
-                            <input type="radio" name="foo" value="<%=data[2].e%>"/><%=data[9].cautraloi%></label>
-                        <br><input type="submit" name="" class="btn btn-info" value="Submit">
-                    </li>
-                </ul>
-        </form>        
-    </div> -->
+    </section>
     <hr>
     <footer>
         <div class="container">
@@ -179,7 +172,7 @@
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        <li><a href="https://www.facebook.com/ong.caothang.121"><i class="fa fa-facebook"></i></a>
                         </li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a>
                         </li>
@@ -191,27 +184,10 @@
     <!-- /.container -->
 
     <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $("input:checkbox").on('click', function() {
-            // in the handler, 'this' refers to the box clicked on
-          var $box = $(this);
-          if ($box.is(":checked")) {
-            // the name of the box is retrieved using the .attr() method
-            // as it is assumed and expected to be immutable
-            var group = "input:checkbox[name='" + $box.attr("name") + "']";
-            // the checked state of the group/box on the other hand will change
-            // and the current value is retrieved using .prop() method
-            $(group).prop("checked", false);
-            $box.prop("checked", true);
-          } else {
-            $box.prop("checked", false);
-          }
-        });
-    </script>
+    <script src="../js/bootstrap.min.js"></script>
 
 </body>
 
