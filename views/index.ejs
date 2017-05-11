@@ -9,185 +9,346 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TTNT</title>
+    <title>He co so tri thuc</title>
 
-    <!-- Bootstrap Core CSS -->
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="../css/grayscale.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../css/style.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+    <link href="../css/animate.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <style>
-        body {
-            padding-top: 0px;
-            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-        }
+    #test{
+        padding-top: 70px;
+        font-family: "Open Sans", sans-serif;
+        height: 100vh;
+        background: url("../img/HgflTDf.jpg") 50% fixed;
+        background-size: cover;
+        color: white;
+    }
+    .back0{
+      background: url("../img/HgflTDf.jpg") 50% fixed;
+    }
+    .mySlides {display:none;}
+    .prev, .next {
+      /*margin-top: 20px;*/
+      cursor: pointer;
+      /*position: absolute;*/
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: black;
+      background: #DDDDDD;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+      margin-left: 20px; 
+    }
+    .prev{
+                margin-left: 270px;
+    }
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    .button {
+      border-radius: 4px;
+      background-color: #00CCFF;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 20px;
+      padding: 20px;
+      width: 150px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      /*right: -20px;*/
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 25px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    .sub{
+        margin-top: 20px; 
+        margin-left: 900px;
+    }
     </style>
 
 </head>
 
-<body>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/">F5</a>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">F5</span>
+                </a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="" href="/test">Test nhanh</a>
-                    </li>
-                    <li>
-                        <a class="" href="/"></a>
-                    </li>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#test">Test</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-    <!-- Page Content -->
-    <header>
-        <div class="container">
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
             <div class="intro-text">
-                <div class="intro-heading">F5</div>
-                <div class="intro-lead-in">Lựa chọn điểm đến phù hợp cho kì nghỉ của bạn</div>
+                <div class="intro-heading wow bounceInDown">F5</div>
+                <div class="intro-lead-in wow bounceInUp">Lựa chọn điểm đến phù hợp cho kì nghỉ của bạn</div>
+                <a href="#test" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
             </div>
         </div>
+        </div>
     </header>
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Các địa điểm du lịch:</h2>
+
+    <!-- About Section -->
+
+    <!-- Download Section -->
+    <section id="test" class="content-section">
+        
+    <center><h1>Vui lòng trả  lời các câu hỏi dưới đây: </h1></center>
+    <form method="post" action="/addAns">
+        <div class="w3-content" style="max-width:500px;margin-left: 300px;" >
+             
+          <% for(var j=0 ; j< ques.length;j++){ %>
+          <div class=" mySlides w3-container w3-xlarge back<%=j%> w3-card-4 " style="width: 150%;  height:200px;"> 
+                <label><%=ques[j].question%></label>  <br>   
+                <% for(var i=0 ; i < data.length;i++){ %>
+                  <%if(j!=ques.length-1){%>
+                    <%if(data[i].cauhoi === ques[j].question){%>
+                                   <label>
+                                      <input type="radio" onclick="plusSlides(1)" name="foo<%=j%>"" value="<%=data[i].e%>"/><%=data[i].cautraloi%></label>
+                                   <br><label>
+                                  <!-- <br><input type="submit" name="" class="btn btn-info" value="Submit"> -->
+                    <%}%>  
+                  <%}else{%> 
+                    <%if(data[i].cauhoi === ques[j].question){%>
+                                   <label>
+                                      <input type="radio" onclick="" name="foo<%=j%>"" value="<%=data[i].e%>"/><%=data[i].cautraloi%></label>
+                                   <br><label>
+                                  <!-- <br><input type="submit" name="" class="btn btn-info" value="Submit"> -->
+                    <%}%>  
+                  <%}%> 
+                 <%}%> 
+                </div> 
+          <%}%> 
+          
+          <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">PREV  </a>
+          <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">  NEXT</a>
+            <!-- <img class="mySlides" src="img_monterosso.jpg" style="width:100%">
+
+            <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
+              <p><span class="w3-tag w3-yellow">New!</span>
+              <p>6 Crystal Glasses</p>
+              <p>Only $99 !!!</p>
+            </div>
+
+            <img class="mySlides" src="img_manarola.jpg" style="width:100%"> -->
+        </div>
+        <!-- <input type="submit" name="" class="btn btn-info sub" value="Submit"> -->
+        <button class="button sub"><span>Submit </span></button>
+    </form>  
+    </section>
+
+    <!-- Contact Section -->
+   <section id="contact" class="container content-section text-center">
+        <div class="container">           
+            <h2 class="">Contact us</h2>
+            <div class="row col-md-offset-1">
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="img/team/thang.jpg" class="img-responsive img-circle" alt="">
+                        <h4> Nguyễn Đức Thắng</h4>
+                        <p class="text-muted">Fullstack Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-google"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/ong.caothang.121"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/thang-nguyen-283421118/"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="img/team/thang.jpg" class="img-responsive img-circle" alt="">
+                        <h4> Nguyễn Đức Thắng</h4>
+                        <p class="text-muted">Fullstack Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-google"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/ong.caothang.121"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/thang-nguyen-283421118/"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="img/team/AQuach.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Quách Ngọc Toàn</h4>
+                        <p class="text-muted">Fullstack Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/toanquach.bk" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="img/team/ngaP.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Lê Thị Nga</h4>
+                        <p class="text-muted">Fullstack Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/nga.lethi.9619934?fref=ts" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="img/team/tuan.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Nguyễn Anh Tuấn</h4>
+                        <p class="text-muted">Fullstack Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="https://www.linkedin.com/in/nguy%E1%BB%85n-anh-tu%E1%BA%A5n-659590142/"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/anhtuan96a8" target="_blank"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/tuantetonnn/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
                 </div>
             </div>
         </div>
     </section>
-    <hr>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <span class="copyright">Copyright &copy; F5 2017</span>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="https://www.facebook.com/ong.caothang.121"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="container text-center">
+            <p>Copyright &copy; F5 2017</p>
         </div>
     </footer>
-    <!-- /.container -->
+<script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="../js/jquery.js"></script>
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          if (n > slides.length) {slideIndex = 1} 
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none"; 
+          }
+          slides[slideIndex-1].style.display = "block"; 
+        }
+    </script>
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../js/grayscale.min.js"></script>
 
 </body>
 

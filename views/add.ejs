@@ -28,7 +28,7 @@
 </head>
 
 <body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/users/posts">F5</a>
+                <a class="navbar-brand" href="/test">F5</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -73,10 +73,10 @@
             <div class="container">
 
                 <div class="text-center" ng-app = "addQues" ng-controller = "addQues">
-                    <h1><span class="fa fa-sign-in"></span> Add question</h1>
+                    <h1><span class="fa fa-sign-in"></span> Add Location</h1>
                     <hr>
                     <div class="col-md-8">
-                        <form action="/addLoc" method="post" name="" >
+                        <form action="/addLoc" method="POST" name="" >
                              <div class="form-group">   
                                   <label>Location</label>     
                                   <!--  <input type="text" name="cauhoi" class="form-control" ng-model="ques" placeholder="Question"/> -->
@@ -89,8 +89,9 @@
                                 <input type="text" class="form-control" name="lat" ng-model="lat" placeholder="Lat"/>
                                 <input type="text" class="form-control" name="lon" ng-model="lon" placeholder="Lon"/>
                                 <input type="text" class="form-control" name="link" ng-model="link" placeholder="Link"/>
+                                <input type="text" class="form-control" name="e" ng-model="e" placeholder="e"/>
                             </div>
-                                <button type="Submit" class="btn btn-info" ng-click="addLoc()" >Submit</button>
+                                <button type="Submit" class="btn btn-info" ng-click="addLoc()" >
                         </form>
                     </div>
                     <div class="col-md-4">
@@ -132,15 +133,19 @@
     <script type="text/javascript">
         var app = angular.module("addQues",[]);
         app.controller("addQues",function($scope,$http){
-            $scope.del = function(){
-                var c = $scope.ans3;
-                var loc = $scope.ans4;
+            $scope.addLoc = function(){
+                var c = $scope.c;
+                var loc = $scope.loc;
+                var lat = $scope.lat;
+                var lon = $scope.lon;
+                var link = $scope.link;
+                var e = $scope.e;
 
                   console.log(id);
                   $http({
                     method : "POST",
                     url: "/addLoc",
-                    data: {ques: ques,ans1: ans1, ans2:ans2, ans3:ans3, ans4:ans4},
+                    data: {c: c,loc: loc, lat:lat, lon:lon, link:link,e:e},
                     headers: {'Content-Type': 'application/json'}
                   }).then(function(data){
                     

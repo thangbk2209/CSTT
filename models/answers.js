@@ -1,6 +1,6 @@
 var mongoose=require('mongoose');
 
-var questionSchema=mongoose.Schema({
+var ansSchema=mongoose.Schema({
 	cauhoi: String,
 	causo: Number,
 	cautraloi: String,
@@ -8,4 +8,4 @@ var questionSchema=mongoose.Schema({
 	c: [Number]
 });
 
-module.exports = mongoose.model('Question',questionSchema);
+module.exports = mongoose.model('Answer',ansSchema);

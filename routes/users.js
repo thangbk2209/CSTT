@@ -6,9 +6,9 @@ var router = express.Router();
 router.get('/',isLoggedIn, function(req, res, next) {
   res.render('index',{message:req.flash('loginMessage')});
 });
-router.get('/admin', function(req, res, next) {
-  res.render('add.ejs', {});
-});
+// router.get('/admin', function(req, res, next) {
+//   res.render('add.ejs', {});
+// });
 module.exports = router;
 
 function isLoggedIn(req,res,next){

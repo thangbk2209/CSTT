@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Ques = require('../models/questions.js');
+var Ques = require('../models/question.js');
 var Loc = require('../models/locations.js');
 router.get('/:loc',function(req,res,next){
   var loc = req.params.loc;

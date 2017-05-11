@@ -1,25 +1,47 @@
 var express = require('express');
 var router = express.Router();
-var Ques = require('../models/questions.js');
+var Ques = require('../models/question.js');
 var Loc = require('../models/locations.js');
+var Ans = require('../models/answers.js');
 var _ = require('lodash');
 var a = [];
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index');
-});
-router.get('/test', function(req, res, next) {
-  Ques.find({}, function(err,data){
+    Ques.find({}, function(err,docs){
     if(err)
       console.log(err);
-    console.log('Ques: '+ data);
-    console.log(data[1]);
+    console.log('Ques: '+ docs);
+    // console.log(data[1]);
     // console.log(data[1].ans.length);
-    res.render('test', {data:data});
+    Ans.find({},function(err,data){
+      if(err) console.log(err);
+      console.log('ans: '+data);
+
+      res.render('index', {data:data, ques:docs});
+    })
+    
+  })
+});
+router.get('/test', function(req, res, next) {
+  Ques.find({}, function(err,docs){
+    if(err)
+      console.log(err);
+    console.log('Ques: '+ docs);
+    // console.log(data[1]);
+    // console.log(data[1].ans.length);
+    Ans.find({},function(err,data){
+      if(err) console.log(err);
+      console.log('ans: '+data);
+
+      res.render('test', {data:data, ques:docs});
+    })
+    
   })
   
 });
-
+router.get('/admin',function(req,res,next){
+  res.render('add.ejs');
+})
 router.get('/abc',function(req,res,next){
   Ques.find({}, function(err,data){
     if(err)
@@ -30,31 +52,16 @@ router.get('/abc',function(req,res,next){
 })
 router.post('/addAns',function(req,res,next){
   var ans=[];
-  ans.push(req.body.foo);
+  ans.push(req.body.foo0);
   ans.push(req.body.foo1);
   ans.push(req.body.foo2);
   ans.push(req.body.foo3);
   ans.push(req.body.foo4);
   ans.push(req.body.foo5);
-  // if(req.body.foo == null|| 
-  //   req.body.foo1 == null|| 
-  //   req.body.foo2 == null|| 
-  //   req.body.foo3 == null|| 
-  //   req.body.foo4 == null|| 
-  //   req.body.foo5 == null){
-  //       Ques.find({}, function(err,data){
-  //       if(err)
-  //         console.log(err);
-  //       console.log('Ques: '+ data);
-  //       console.log(data[1])
-  //       // console.log(data[1].ans.length);
-        
-  //       res.render('index', {data:data});
-  //   })
-  // }
+
   console.log(ans);
   for(var i=0;i<6;i++){
-      Ques.findOne({'e': ans[i]}, function(err,data){
+      Ans.findOne({'e': ans[i]}, function(err,data){
       if(err) console.log(err);
       a.push(data.c);
       if(a.length==6){
@@ -90,8 +97,22 @@ router.post('/addLoc', function(req, res, next) {
     if (err)
         console.log(err);
     });
+   var alle = req.body.e;
+   console.log(alle.length);
    console.log("Luu thanh cong cau hoi");
-   res.redirect('/users/admin');
+   for(var i = 0; i<alle.length ; i++){
+    if(alle[i]!=','){
+      console.log(alle[i]);
+      Ans.findOne({e : alle[i]},function(err,data){
+        console.log(data);
+        data.c.push(req.body.c);
+        data.save(function(err){
+          if(err) console.log(err);
+        })
+      })
+    }
+   }
+   res.redirect('/admin');
 });
 
 

@@ -19,30 +19,41 @@
     <style>
     body {
         padding-top: 70px;
+        font-family: "Open Sans", sans-serif;
+        height: 100vh;
+        background: url("../img/HgflTDf.jpg") 50% fixed;
+        background-size: cover;
+        color: white;
+    }
+    .back0{
+      background: url("../img/HgflTDf.jpg") 50% fixed;
     }
     .mySlides {display:none;}
     .prev, .next {
-      margin-top: 20px;
+      /*margin-top: 20px;*/
       cursor: pointer;
       /*position: absolute;*/
       top: 50%;
       width: auto;
       margin-top: -22px;
-      /*padding: 16px;*/
+      padding: 16px;
       color: black;
+      background: #DDDDDD;
       font-weight: bold;
       font-size: 18px;
       transition: 0.6s ease;
       border-radius: 0 3px 3px 0;
+
     }
 
     /* Position the "next button" to the right */
     .next {
       right: 0;
       border-radius: 3px 0 0 3px;
+      margin-left: 20px; 
     }
     .prev{
-                margin-left: 300px;
+                margin-left: 270px;
     }
     /* On hover, add a black background color with a little bit see-through */
     .prev:hover, .next:hover {
@@ -131,84 +142,41 @@
     <!-- Page Content --><center><h1>Vui lòng trả  lời các câu hỏi dưới đây: </h1></center>
     <form method="post" action="/addAns">
         <div class="w3-content" style="max-width:500px;margin-left: 300px;" >
-        <div class=" mySlides w3-container w3-xlarge w3-white w3-card-4 " style="width: 150%;  height:200px;">         
-                    
-                            <label><%=data[0].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" onclick="plusSlides(1)" name="foo" value="<%=data[0].e%>"/><%=data[0].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo" onclick="plusSlides(1)" value="<%=data[1].e%>"/><%=data[1].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo" onclick="plusSlides(1)" value="<%=data[2].e%>"/><%=data[2].cautraloi%></label>
-                            <!-- <br><input type="submit" name="" class="btn btn-info" value="Submit"> -->
-                  
-        </div>
-        <div class="mySlides w3-container w3-xlarge w3-white w3-card-4" style="width: 150%;  height:200px;">
-                            <label><%=data[3].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" name="foo1" onclick="plusSlides(1)" value="<%=data[3].e%>"/><%=data[3].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo1" onclick="plusSlides(1)" value="<%=data[4].e%>"/><%=data[4].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo1" onclick="plusSlides(1)" value="<%=data[5].e%>"/><%=data[5].cautraloi%>
-        </div>
-          <div class="mySlides w3-container w3-xlarge w3-white w3-card-4" style="width: 150%;height:200px;  ">
-                            <label><%=data[6].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" name="foo2" onclick="plusSlides(1)" value="<%=data[6].e%>"/><%=data[6].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo2" onclick="plusSlides(1)" value="<%=data[7].e%>"/><%=data[7].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo2" onclick="plusSlides(1)" value="<%=data[8].e%>"/><%=data[8].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo2" onclick="plusSlides(1)" value="<%=data[9].e%>"/><%=data[9].cautraloi%></label>
+             
+          <% for(var j=0 ; j< ques.length;j++){ %>
+          <div class=" mySlides w3-container w3-xlarge back<%=j%> w3-card-4 " style="width: 150%;  height:200px;"> 
+                <label><%=ques[j].question%></label>  <br>   
+                <% for(var i=0 ; i < data.length;i++){ %>
+                  <%if(j!=ques.length-1){%>
+                    <%if(data[i].cauhoi === ques[j].question){%>
+                                   <label>
+                                      <input type="radio" onclick="plusSlides(1)" name="foo<%=j%>"" value="<%=data[i].e%>"/><%=data[i].cautraloi%></label>
+                                   <br><label>
+                                  <!-- <br><input type="submit" name="" class="btn btn-info" value="Submit"> -->
+                    <%}%>  
+                  <%}else{%> 
+                    <%if(data[i].cauhoi === ques[j].question){%>
+                                   <label>
+                                      <input type="radio" onclick="" name="foo<%=j%>"" value="<%=data[i].e%>"/><%=data[i].cautraloi%></label>
+                                   <br><label>
+                                  <!-- <br><input type="submit" name="" class="btn btn-info" value="Submit"> -->
+                    <%}%>  
+                  <%}%> 
+                 <%}%> 
+                </div> 
+          <%}%> 
+          
+          <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">PREV  </a>
+          <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">  NEXT</a>
+            <!-- <img class="mySlides" src="img_monterosso.jpg" style="width:100%">
 
-        </div>
-        <div class="mySlides w3-container w3-xlarge w3-white w3-card-4" style="width: 150%;height:200px;  ">
+            <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
+              <p><span class="w3-tag w3-yellow">New!</span>
+              <p>6 Crystal Glasses</p>
+              <p>Only $99 !!!</p>
+            </div>
 
-                            <label><%=data[10].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" name="foo3" onclick="plusSlides(1)" value="<%=data[10].e%>"/><%=data[10].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo3" onclick="plusSlides(1)" value="<%=data[11].e%>"/><%=data[11].cautraloi%></label>
-                            <br><label>
-                                <input type="radio" name="foo3" onclick="plusSlides(1)" value="<%=data[12].e%>"/><%=data[12].cautraloi%></label>
-
-        </div>
-        <div class="mySlides w3-container w3-xlarge w3-white w3-card-4" style="width: 150%;height:200px;  ">
-                            <label><%=data[13].cauhoi%></label>
-                             <br> 
-                             <label>
-                                <input type="radio" name="foo4" onclick="plusSlides(1)" value="<%=data[13].e%>"/><%=data[13].cautraloi%></label>
-                             <br><label>
-                               <input type="radio" name="foo4" onclick="plusSlides(1)" value="<%=data[14].e%>"/><%=data[14].cautraloi%></label>
-        </div>
-        <div class="mySlides w3-container w3-xlarge w3-white w3-card-4" style="width: 150%;height:200px;  ">
-
-                            <label><%=data[15].cauhoi%></label>
-                            <br> 
-                             <label>
-                                <input type="radio" name="foo5"  value="<%=data[15].e%>"/><%=data[15].cautraloi%></label>
-                            <br><label>
-                               <input type="radio" name="foo5"  value="<%=data[16].e%>"/><%=data[16].cautraloi%></label>
-                            <br><label>
-                               <input type="radio" name="foo5"  value="<%=data[17].e%>"/><%=data[17].cautraloi%>
-        </div>
-       <!--  <a class="prev" onclick="plusSlides(-1)" style="text-decoration: none;">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)" style="text-decoration: none;">&#10095;</a> -->
-          <!-- <img class="mySlides" src="img_monterosso.jpg" style="width:100%">
-
-          <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
-            <p><span class="w3-tag w3-yellow">New!</span>
-            <p>6 Crystal Glasses</p>
-            <p>Only $99 !!!</p>
-          </div>
-
-          <img class="mySlides" src="img_manarola.jpg" style="width:100%"> -->
+            <img class="mySlides" src="img_manarola.jpg" style="width:100%"> -->
         </div>
         <!-- <input type="submit" name="" class="btn btn-info sub" value="Submit"> -->
         <button class="button sub"><span>Submit </span></button>
@@ -267,17 +235,12 @@
         function showSlides(n) {
           var i;
           var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("dot");
           if (n > slides.length) {slideIndex = 1} 
           if (n < 1) {slideIndex = slides.length}
           for (i = 0; i < slides.length; i++) {
               slides[i].style.display = "none"; 
           }
-          for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-          }
           slides[slideIndex-1].style.display = "block"; 
-          dots[slideIndex-1].className += " active";
         }
     </script>
     <!-- /.container -->

@@ -12,6 +12,7 @@
     <title>F5</title>
 
     <!-- Bootstrap Core CSS -->
+    <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -44,7 +45,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">F5</a>
+                <a class="navbar-brand page-scroll" href="/">
+                    <i class="fa fa-play-circle"></i> <span class="light">F5</span>
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -73,6 +76,8 @@
                <a style="text-decoration: none;" href=<%=data.link%>  >
                      <h1><%=data.loc%></h1>
                 </a>
+                <p><b>Khoảng cách: </b><span id="distance"></span></p>
+                <p><b>Thời gian: </b><span id="duration"></span></p>
             </div>
             <div class="col-md-6" id="map" style="text-align:left;margin-top:50px;height:500px;">
             </div>
@@ -102,10 +107,8 @@
           var lngSrc = 105.853277;
           var latDes = <%=data.lat%>;
           var lngDes = <%=data.lon%>;
-
           drawPoint(lngSrc,latSrc,lngDes,latDes);
         }
-
         // var latSrc = 21.031208;
         // var lngSrc = 105.853277;
         // var latDes = <%=data.lat%> ;
@@ -139,7 +142,6 @@
             // alert((google.maps.geometry.spherical.computeDistanceBetween(pointA, pointB)/1000).toFixed(2));
             calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
         }
-
         function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
             directionsService.route({
                 origin: pointA,
@@ -150,22 +152,20 @@
             }, function (response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
-                    alert(directionsDisplay.directions.routes[0].legs[0].distance.text);
-                    alert(directionsDisplay.directions.routes[0].legs[0].duration.text);
-
+                    $("#distance").text(directionsDisplay.directions.routes[0].legs[0].distance.text);
+                    $("#duration").text(directionsDisplay.directions.routes[0].legs[0].duration.text);
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
             });
         }
-
     </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5OE62Cn3iG-hleW2aMl51xGQuuUrDykI&libraries=geometry&callback=myMap"></script>
-    <script src="js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
 </body>
 
